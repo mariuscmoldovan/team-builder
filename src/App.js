@@ -4,24 +4,24 @@ import Form from './Form.js'
 import styled from "styled-components";
 
 const defaultFormValues = {
-  username: '',
+  name: '',
   email:'',
   role:''
 }
 
 const defaultData = [
   {
-      username:"Mario",
+      name:"Mario",
       email:"mario@gmail.com",
       role:"web-developer"
   },
   {
-      username:"Petro",
+      name:"Petro",
       email:"petro@gmail.com",
       role:"frontend-developer"
   },
   {
-      username:"Jon",
+      name:"Jon",
       email:"jon@gmail.com",
       role:"backend-developer"
   }
@@ -29,8 +29,10 @@ const defaultData = [
 
 
 const StyledDiv = styled.div`
-  width:80%;
-  margin-left:10%;
+  width:90%;
+  margin-left:20%;
+  color: green
+
 `
 
 function App() {
@@ -42,8 +44,8 @@ function App() {
   }
 
   const submitForm = () => {
-    const newMember = {username:formValues.username.trim(),email:formValues.email.trim(),role:formValues.role}
-    if (newMember.username === "" || newMember.email === ""){
+    const newMember = {name:formValues.name.trim(),email:formValues.email.trim(),role:formValues.role}
+    if (newMember.name === "" || newMember.email === ""){
       return;
     }
     setTeam(team.concat(newMember))
@@ -52,15 +54,17 @@ function App() {
 
   return (
     <StyledDiv>
-      <h1>Team Members</h1>
-      <hr></hr>
+      <h1>TEAM</h1>
+      <br/>
       {team.map((member, idx)=>{
         return(
           <div key = {idx}>
-            <h2>{member.username}</h2>
+            <h2>{member.name}</h2>
             <h3>Email: {member.email}</h3>
             <p>Role: {member.role}</p>
             <hr></hr>
+          <br/>
+          <br/>
           </div>
         )
       })}

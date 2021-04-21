@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './App.css';
 
 function Form(props) {
     const {values, update, submit} = props
@@ -16,7 +16,7 @@ function Form(props) {
         <div>
             <h1>Add a new Member!</h1>
             <form onSubmit = {onSubmit}>
-                <input name = "username" type = "text" onChange = {onChange} value = {values.username} placeholder = "Name..."/>
+                <input name = "name" type = "text" onChange = {onChange} value = {values.name} placeholder = "Name..."/>
                 <input name = "email" type = "text" onChange = {onChange} value = {values.email} placeholder = "Email..."/>
                 <label>Role
                     <select name="role" onChange={onChange} value = {values.role}>
@@ -27,7 +27,7 @@ function Form(props) {
                      
                     </select>
                 </label>
-                <button disabled={!values.username || !values.email || !values.role}>submit</button>
+                <button  disabled={!values.name || !values.email || !values.role}>submit</button>
             </form>
         </div>
     );
